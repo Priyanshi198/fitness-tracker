@@ -1,0 +1,208 @@
+:root {
+  --background-light: #f9fafb;
+  --text-light: #212529;
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --border-color: #e0e0e0;
+  --background-dark: #121212;
+  --text-dark: #ffffff;
+  --container-dark: #1e1e1e;
+  --input-dark: #333;
+  --input-border-dark: #555;
+  --input-placeholder-dark: #bbb;
+}
+
+/* Global Styles */
+body {
+  background-color: var(--background-light);
+  color: var(--text-light);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Support */
+.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+/* Heading with Emoji Animation */
+h1 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+h1::before {
+  content: "💪 ";
+}
+h1::after {
+  content: " 🚀";
+}
+
+/* Container Styling */
+.container {
+  background-color: var(--background-light);
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+  animation: slideIn 0.5s ease-in-out;
+}
+.dark-mode .container {
+  background-color: var(--container-dark);
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Input Styling */
+input {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+/* Dark Mode Input Fix */
+.dark-mode input {
+  background-color: var(--input-dark);
+  color: var(--text-dark);
+  border-color: var(--input-border-dark);
+}
+.dark-mode input::placeholder {
+  color: var(--input-placeholder-dark);
+}
+
+/* Button Styling */
+button {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+button:hover {
+  transform: scale(1.05);
+}
+.btn-success {
+  background-color: var(--success-color);
+  color: white;
+}
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+/* Button Hover Effects */
+.btn-success:hover {
+  background-color: #218838;
+}
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Dark Mode Button Fix */
+.dark-mode .btn-success {
+  background-color: #218838;
+}
+.dark-mode .btn-secondary {
+  background-color: #5a6268;
+}
+
+/* Footer Styling */
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  color: var(--secondary-color);
+  border-top: 1px solid var(--border-color);
+  background-color: var(--background-light);
+}
+.footer p {
+  margin: 0;
+  animation: fadeIn 1s ease-in-out;
+}
+.dark-mode .footer {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+/* Copyright with Emoji */
+.footer p::before {
+  content: "© ";
+}
+.footer p::after {
+  content: " 🌿 Made with Passion by Priyanshi Sharma";
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-heading {
+  animation: fadeInUp 1.5s ease-out;
+}
+
+/* Button Hover Animation */
+button, a.btn {
+  transition: all 0.3s ease;
+}
+
+a.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 16px rgba(0, 123, 255, 0.2);
+}
